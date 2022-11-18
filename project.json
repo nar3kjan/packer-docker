@@ -15,7 +15,11 @@
                 },
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
-            "iam_instance_profile": "ec2_acr"
+            "assume_role": {
+                "role_arn"    :  "arn:aws:iam::558664324013:instance-profile/ec2_acr",
+                "session_name":  "SESSION_NAME",
+                "external_id" :  "EXTERNAL_ID"
+            }
 
         }
     ],
