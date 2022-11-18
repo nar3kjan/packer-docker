@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get install \
+yes | sudo apt-get install \
     ca-certificates \
     curl \
     gnupg \
@@ -11,14 +11,12 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin <<-EOF
-yes
-EOF
+yes | sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo usermod -aG docker $user
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
-sudo ./aws/install
+yes | sudo ./aws/install
 
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 558664324013.dkr.ecr.us-east-1.amazonaws.com
 
