@@ -14,12 +14,8 @@
                 "most_recent": true
                 },
             "instance_type": "t2.micro",
-            "ssh_username": "ubuntu",
-            "assume_role": {
-                "role_arn"    :  "arn:aws:iam::558664324013:role/ecr-role",
-                "session_name":  "SESSION_NAME",
-                "external_id" :  "EXTERNAL_ID"
-            }
+            "ssh_username": "ubuntu"
+
 
         }
     ],
