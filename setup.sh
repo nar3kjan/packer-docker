@@ -11,8 +11,9 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin --yes
-
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin <<-EOF
+yes
+EOF
 sudo usermod -aG docker $user
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
